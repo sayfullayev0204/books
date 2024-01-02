@@ -1,0 +1,14 @@
+<!-- video_hosting/templates/video_hosting/home.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Media List{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Kitoblar ro'yxati</h1>
+
+        <div class="col-md-6">
+            <a href="{% url 'media_list' %}">Ertaklar</a>
+        </div>
+
+{% endblock %}

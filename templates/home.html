@@ -1,0 +1,25 @@
+<!-- video_hosting/templates/video_hosting/home.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Media List{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="display-4">online kitoblar <img class="row" src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&h=502&fit=crop&dpr=1" style="max-width: 90%; margin-left: 19px; padding: 2px; border-radius: 20%;" alt=""></h1>
+</div>
+
+{% for video in video_list %}
+<div class="jumbotron">
+    <div class="col-md-6">
+        <h2>Video List</h2>
+        <ul class="list-group">
+                <li style="border-radius: 20px; background-color: blanchedalmond; color:rgb(48, 22, 72); " class="list-group-item"><a style="color: rgb(86, 204, 212); font-family: 'Arial', sans-serif; font-size: 18px;" href="{% url 'media_detail' pk=video.id %}" class="title">{{ video.title }}</a></li>
+                <img style="padding: 20px;" src="{{ video.img.url }}" alt="">
+            
+        </ul>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
